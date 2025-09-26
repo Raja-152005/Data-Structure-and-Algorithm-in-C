@@ -1,0 +1,18 @@
+#include<stdio.h>
+int main(){
+    int n,i,j,arr[20];
+    printf("enter number of elements:");
+    scanf("%d",&n);
+    printf("enter elements:");
+    for(i=0;i<n;i++){
+        scanf("%d",&arr[i]);
+    }
+    for(i=0;i<n;i++){
+        for(j=1;j<n;j++){
+            if(arr[i]==arr[j] && i<j){
+                printf("\nduplicate number of %d is found at %d and %d",arr[i],i,j);
+            }
+        }
+    }
+    
+}
