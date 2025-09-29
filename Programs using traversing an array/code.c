@@ -1,0 +1,31 @@
+#include <stdio.h>
+int main(){
+    int num,largest=-1,i,index2,smallest,index1;
+    printf("Enter the number of elements:");
+    scanf("%d",&num);
+    int arr[num];
+    printf("enter elements:");
+    for(i=0;i<num;i++){
+        scanf("%d",&arr[i]);
+    }
+    for(i=0;i<num;i++){
+        if(arr[i]>largest){
+            largest=arr[i];
+            index1=i;
+        }
+    }
+    for(i=0;i<num;i++){
+        if(arr[i]<smallest){
+            smallest=arr[i];
+            index2=i;
+        }
+    }
+    printf("the largest number in array is %d at index %d",largest,index1);
+    printf("\nthe smallest number in array is %d at index %d",smallest,index2);
+    arr[index2]=largest;
+    arr[index1]=smallest;
+    printf("\n after interchanging:");
+    for(i=0;i<num;i++){
+        printf("\narr[%d]=%d",i,arr[i]);
+    }
+}
