@@ -1,0 +1,23 @@
+#include<stdio.h>
+int main(){
+    int i,num,n;
+    int arr[20];
+    printf("Enter the no. of elements");
+    scanf("%d",&num);
+    printf("Enter elements:");
+    for(i=0;i<num;i++){
+        scanf("%d",&arr[i]);
+    }
+    printf("Enter the number that has to be deleted");
+    scanf("%d",&n);
+    // search element n from starting and shift element left from n+1 element index.
+    for(i=0;i<num;i++){
+        if(arr[i]>=n){
+            arr[i]=arr[i+1];
+        }
+    }
+    printf("Array after deletion:");
+    for(i=0;i<num-1;i++){
+        printf("%d ",arr[i]);
+    }
+}
