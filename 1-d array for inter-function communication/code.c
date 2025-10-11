@@ -1,0 +1,56 @@
+#include<stdio.h>
+void read(int n,int arr[]);
+int greatest(int n,int arr[]);
+int smallest(int n,int arr[]);
+void interchange(int g_index,int s_index,int arr[20],int num);
+int main(){
+    int arr[20],num,g_index,s_index;
+    printf("Enter the number of elements in array:");
+    scanf("%d",&num);
+    read(num,arr);
+    g_index=greatest(num,arr);
+    s_index=smallest(num,arr);
+    interchange(g_index,s_index,arr,num);
+}
+void read(int n,int arr[10]){
+    int i;
+    printf("Enter elements:");
+    for(i=0;i<n;i++){
+        scanf("%d",&arr[i]);
+    }
+}
+int greatest(int n,int arr[20]){
+    int i=0,large=0,index;
+    while(i<n){
+        if(arr[i]>large){
+            large=arr[i];
+            index=i;;
+        }
+        i++;
+    }
+    printf("The greatest number in array is %d at index %d",large,index);
+    return index;
+}
+int smallest(int n,int arr[20]){
+    int i=0,small=123456,index;
+    while(i<n){
+        if(arr[i]<small){
+            small=arr[i];
+            index=i;
+        }
+        i++;
+    }
+    printf("\nThe smallest number in array is %d at index %d",small,index);
+    return index;
+}
+void interchange(int g_index,int s_index,int arr[20],int num){
+   int temp,i;
+   temp=arr[g_index];
+   arr[g_index]=arr[s_index];
+   arr[s_index]=temp;
+   printf("\nArray after interchanging:");
+   for(i=0;i<num;i++){
+    printf("%d ",arr[i]);
+   }
+    
+}
