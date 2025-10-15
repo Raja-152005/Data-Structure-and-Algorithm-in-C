@@ -1,0 +1,24 @@
+// Code using pointer
+#include <stdio.h>
+
+void func(int *p);
+
+int main(){
+    int arr[5] = {620, 2, 25, 65, 8};
+
+    // If you want to print base address:
+    printf("Base address of array = %p\n", (void*)arr);
+
+    // Call function
+    func(arr);
+}
+
+void func(int *p){
+    int i;
+    printf("%d",*(p+3));
+    // Print all elements
+    printf("\nArray elements: ");
+    for(i = 0; i < 5; i++){
+        printf("%d ", *(p+i));
+    }
+}
