@@ -22,4 +22,22 @@ void func(int *p){
         printf("%d ", *(p+i));
     }
 }
+//Other Way
+// Code without using pointer 
+#include <stdio.h>
+
+void func(int arr[]);
+
+int main(){
+    int arr[5] = {620, 2, 25, 65, 8};
+    func(arr);
+}
+void func(int arr[5]){
+    printf("Array elements are:");
+    int i;
+    for(i=0;i<5;i++){
+        printf("%d ",arr[i]);
+    }
+}
+
 
